@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("cliente")
+//@RestController("cliente")
 public class ClienteRest {
 
     @Autowired
@@ -16,6 +16,7 @@ public class ClienteRest {
 
     @GetMapping
     public List<Cliente> getClientes() {
+
         return clienteRepository.findAll();
     }
 }
