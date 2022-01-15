@@ -21,6 +21,16 @@ public class Produto {
     @ManyToMany(mappedBy = "produtos")
     private Set<Cliente> clientes = new HashSet<>();
 
+    public Produto() {
+    }
+
+    public Produto(Long id, String descricao, Integer quantidade, Set<Cliente> clientes) {
+        this.id = id;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.clientes = clientes;
+    }
+
     public Long getId() {
         return id;
     }

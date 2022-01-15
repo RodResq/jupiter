@@ -29,6 +29,17 @@ public class Cliente implements Serializable {
                 inverseJoinColumns = @JoinColumn(name = "produto_id"))
     private Set<Produto> produtos = new HashSet<>();
 
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String codCliente, Date dataHoraEntrada, Date dataHoraSaida, Set<Produto> produtos) {
+        this.id = id;
+        this.codCliente = codCliente;
+        this.dataHoraEntrada = dataHoraEntrada;
+        this.dataHoraSaida = dataHoraSaida;
+        this.produtos = produtos;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
