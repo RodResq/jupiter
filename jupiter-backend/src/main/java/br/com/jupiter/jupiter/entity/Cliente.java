@@ -1,7 +1,10 @@
 package br.com.jupiter.jupiter.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,10 +21,12 @@ public class Cliente implements Serializable {
     public String codCliente;
 
     @Column(name = "DATA_HORA_ENTRADA", nullable = false)
-    public Date dataHoraEntrada;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    public LocalDate dataHoraEntrada;
 
     @Column(name = "DATA_HORA_SAIDA")
-    public Date dataHoraSaida;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    public LocalDate dataHoraSaida;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "cliente_produto",
@@ -32,7 +37,7 @@ public class Cliente implements Serializable {
     public Cliente() {
     }
 
-    public Cliente(Long id, String codCliente, Date dataHoraEntrada, Date dataHoraSaida, Set<Produto> produtos) {
+    public Cliente(Long id, String codCliente, LocalDate dataHoraEntrada, LocalDate dataHoraSaida, Set<Produto> produtos) {
         this.id = id;
         this.codCliente = codCliente;
         this.dataHoraEntrada = dataHoraEntrada;
@@ -56,19 +61,19 @@ public class Cliente implements Serializable {
         this.codCliente = codCliente;
     }
 
-    public Date getDataHoraEntrada() {
+    public LocalDate getDataHoraEntrada() {
         return dataHoraEntrada;
     }
 
-    public void setDataHoraEntrada(Date dataHoraEntrada) {
+    public void setDataHoraEntrada(LocalDate dataHoraEntrada) {
         this.dataHoraEntrada = dataHoraEntrada;
     }
 
-    public Date getDataHoraSaida() {
+    public LocalDate getDataHoraSaida() {
         return dataHoraSaida;
     }
 
-    public void setDataHoraSaida(Date dataHoraSaida) {
+    public void setDataHoraSaida(LocalDate dataHoraSaida) {
         this.dataHoraSaida = dataHoraSaida;
     }
 
