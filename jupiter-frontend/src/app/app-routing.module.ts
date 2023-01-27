@@ -1,3 +1,4 @@
+import { CadastrarPratoComponent } from './pages/cadastrar-prato/cadastrar-prato.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './shared/components';
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'login-form',
     component: LoginFormComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'cadastrar-prato',
+    component: CadastrarPratoComponent,
     canActivate: [ AuthGuardService ]
   },
   {

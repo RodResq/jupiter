@@ -1,3 +1,4 @@
+import { CadastrarPratoComponent } from './pages/cadastrar-prato/cadastrar-prato.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { UnauthenticatedContentModule } from './unauthenticated-content';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadastrarPratoComponent
   ],
   imports: [
     BrowserModule,

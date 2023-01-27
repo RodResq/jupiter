@@ -33,7 +33,7 @@ export const navigation = [
   },
   {
     text: 'Cadastro',
-    path: '',
+    path: 'cadastrar-prato',
     icon: 'user'
   },
 ];
